@@ -31,6 +31,7 @@ const MovingTech = () => {
             }}
             className="opacity-60"
             id={id}
+            key={id}
           >
             <Image
               className={imgClass}

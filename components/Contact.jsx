@@ -5,7 +5,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 
-const Contact = () => {
+const Contact = () => {``
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -56,7 +56,7 @@ const Contact = () => {
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
-                      classname="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                     />
                   </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                       Phone Number
                     </label>
                     <input
-                      classname="border-2 rounded-lg p-3 flex border-gray-300"
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                     />
                   </div>
@@ -75,14 +75,14 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
-                    classname="border-2 rounded-lg p-3 flex border-gray-300"
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
                   />
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    classname="border-2 rounded-lg p-3 flex border-gray-300"
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                   />
                 </div>
