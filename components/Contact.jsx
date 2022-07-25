@@ -5,7 +5,8 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 
-const Contact = () => {``
+const Contact = () => {
+  ``;
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -23,11 +24,11 @@ const Contact = () => {``
                 />
               </div>
               <div>
-                <h2 className="py-2">Name here</h2>
-                <p>Front-End Developer</p>
+                <h3 className="py-2 text-xl">Contact Us</h3>
+                <p>Thank you for your interest in our digital solutions.</p>
                 <p className="py-4">
-                  I am available for freelance or full-time positions. Contact
-                  me and let's talk.
+                  Please fill out this form and one of our experts will get back
+                  to you promptly.
                 </p>
               </div>
               <div>

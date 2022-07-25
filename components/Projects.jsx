@@ -4,6 +4,11 @@ import propertyImg from "../public/assets/projects/property.jpg";
 import cryptoImg from "../public/assets/projects/crypto.jpg";
 import netflixImg from "../public/assets/projects/netflix.jpg";
 import solarhub24Img from "../public/assets/projects/solarhub24.png";
+import covid19trackerImg from "../public/assets/projects/covid19tracker.png";
+import tkphappImg from "../public/assets/projects/tkphapp.gif";
+import the233engineersImg from "../public/assets/projects/233engineers.png";
+import infinitecanvasappImg from "../public/assets/projects/infinitecanvasapp.gif";
+import performatrixImg from "../public/assets/projects/performatrix.png";
 import twitchImg from "../public/assets/projects/twitch.jpg";
 import Link from "next/link";
 import ProjectItem from "./ProjectItem";
@@ -21,38 +26,37 @@ const Projects = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectCard
-            title="Tyre Information Management System"
-            backgroundImg={propertyImg}
+            title="Infinite Canvas App"
+            backgroundImg={infinitecanvasappImg}
             projectUrl="/property"
           />
           <ProjectCard
             title="TKPH App"
-            backgroundImg={"assets/projects/videos/tkphapp.mp4"}
+            backgroundImg={tkphappImg}
             projectUrl="/crypto"
-            type="video"
           />
           <ProjectCard
             title="Solarhub24"
-            backgroundImg={"assets/projects/videos/solarhub24.mp4"}
+            backgroundImg={solarhub24Img}
             projectUrl="/netflix"
-            type="video"
           />
           <ProjectCard
             title="Covid19 Tracker"
-            backgroundImg={twitchImg}
+            backgroundImg={covid19trackerImg}
             projectUrl="/twitch"
           />
           <ProjectCard
             title="233Engineers"
-            backgroundImg={twitchImg}
+            backgroundImg={the233engineersImg}
             projectUrl="/twitch"
           />
           <ProjectCard
-            title="Coplae"
-            backgroundImg={twitchImg}
+            title="Performatrix"
+            backgroundImg={performatrixImg}
             projectUrl="/twitch"
           />
         </div>
+        s
       </div>
     </div>
   );
