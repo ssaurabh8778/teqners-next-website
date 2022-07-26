@@ -26,23 +26,13 @@ const Projects = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectCard
-            title="Infinite Canvas App"
-            backgroundImg={infinitecanvasappImg}
-            projectUrl="/property"
-          />
-          <ProjectCard
-            title="TKPH App"
-            backgroundImg={tkphappImg}
-            projectUrl="/crypto"
-          />
-          <ProjectCard
             title="Solarhub24"
             backgroundImg={solarhub24Img}
             projectUrl="/netflix"
           />
           <ProjectCard
-            title="Covid19 Tracker"
-            backgroundImg={covid19trackerImg}
+            title="Performatrix"
+            backgroundImg={performatrixImg}
             projectUrl="/twitch"
           />
           <ProjectCard
@@ -51,8 +41,18 @@ const Projects = () => {
             projectUrl="/twitch"
           />
           <ProjectCard
-            title="Performatrix"
-            backgroundImg={performatrixImg}
+            title="TKPH App"
+            backgroundImg={tkphappImg}
+            projectUrl="/crypto"
+          />
+          <ProjectCard
+            title="Infinite Canvas App"
+            backgroundImg={infinitecanvasappImg}
+            projectUrl="/property"
+          />
+          <ProjectCard
+            title="Covid19 Tracker"
+            backgroundImg={covid19trackerImg}
             projectUrl="/twitch"
           />
         </div>
