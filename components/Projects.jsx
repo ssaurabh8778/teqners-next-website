@@ -6,7 +6,7 @@ import netflixImg from "../public/assets/projects/netflix.jpg";
 import solarhub24Img from "../public/assets/projects/solarhub24.png";
 import covid19trackerImg from "../public/assets/projects/covid19tracker.png";
 import tkphappImg from "../public/assets/projects/tkphapp.gif";
-import the233engineersImg from "../public/assets/projects/233engineers.png";
+import the233engineersImg from "../public/assets/projects/233Engineers.png";
 import infinitecanvasappImg from "../public/assets/projects/infinitecanvasapp.gif";
 import performatrixImg from "../public/assets/projects/performatrix.png";
 import twitchImg from "../public/assets/projects/twitch.jpg";
