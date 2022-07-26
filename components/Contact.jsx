@@ -1,12 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 
+const initialFormData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 const Contact = () => {
-  ``;
+  const [formData, setFormData] = useState(initialFormData);
+  const checkFormData = () => {
+    for (let i in formData) {
+      if (!formData[i]) {
+        console.log(formData);
+        console.log("checked", formData[i]);
+        return false;
+      }
+      return true;
+    }
+  };
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (!checkFormData()) {
+      alert("Please enter required details.");
+      return;
+    }
+    const sentData = formData;
+    const data = {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify(sentData), // body data type must match "Content-Type" header
+    };
+    fetch(
+      "https://us-central1-teqners.cloudfunctions.net/api/teqners/sendemail",
+      data
+    )
+      .then((res) => console.log(data))
+      .then((data) => {
+        console.log("received data", data);
+        alert("Details submitted. We'll reach out to you soon");
+        setFormData(initialFormData);
+      })
+      .catch((err) => {
+        alert("Error submitting details. Please try again later.");
+        console.log("this error", err);
+      });
+  };
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -59,10 +105,13 @@ const Contact = () => {
                     <input
                       className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                     />
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
+                {/*                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">
                       Phone Number
@@ -72,12 +121,15 @@ const Contact = () => {
                       type="text"
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -85,6 +137,9 @@ const Contact = () => {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -92,9 +147,15 @@ const Contact = () => {
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows="10"
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                   />
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button
+                  className="w-full p-4 text-gray-100 mt-4"
+                  onClick={sendEmail}
+                >
                   Send Message
                 </button>
               </form>

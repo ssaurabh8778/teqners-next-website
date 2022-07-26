@@ -22,7 +22,7 @@ const Main = () => {
             We at "TEQNERS" strives to turn your aspirations into reality. The
             world is transformed by "Ideas" & "Belief". If you have a "Belief"
             that your "Idea" can transform the world, we are here to help you
-            transform that into reality.
+            translate that into reality.
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
