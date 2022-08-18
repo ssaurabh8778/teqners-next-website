@@ -54,7 +54,10 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
-          <Image src={navbarlogoImg} alt="/" width="135" height="50" />
+          <div className="flex items-center">
+            <Image src={navbarlogoImg} alt="/" width="60" height="50" />
+            <h2 className="ml-1 text-[#332c54]">TEQNERS</h2>
+          </div>
         </Link>
 
         <div>
