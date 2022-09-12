@@ -13,10 +13,10 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Clint | Front-End Developer</title>
+                <title>Teqners</title>
                 <meta
-                    name="description"
-                    content="Teqners - Web developers team"
+                    name="Teqners description"
+                    content="Teqners - Your Trusted Tech Partner"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

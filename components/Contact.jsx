@@ -63,8 +63,8 @@ const Contact = () => {
                 <div className="flex flex-wrap gap-8 justify-center mt-8 w-full ">
                     <div className="">
                         <img
-                            className="mb-4 max-w-[500px]"
-                            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80"
+                            className="mb-4 max-w-[500px] opacity-80"
+                            src="/assets/contact.jpg"
                         />
 
                         <div>
