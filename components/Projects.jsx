@@ -22,7 +22,7 @@ const Projects = () => {
                     Projects
                 </p>
                 <h2 className="py-4 uppercase text-gray-700 text-2xl">
-                    What I've Built
+                    What We've Built
                 </h2>
                 <div className="grid md:grid-cols-2 mt-4">
                     <ProjectCard

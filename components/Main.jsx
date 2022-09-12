@@ -19,7 +19,7 @@ const Main = () => {
                         </span>
                     </h1>
                     <h2 className="py-2 text-gray-700 uppercase">
-                        Your Technology Partners
+                        Your Trusted Tech Partner
                     </h2>
                     <p className="py-4 text-gray-600 max-w-[70%] m-auto">
                         We at "TEQNERS" strives to turn your aspirations into
