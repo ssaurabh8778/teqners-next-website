@@ -1,0 +1,111 @@
+.navbar {
+    width: 100%;
+    background: #004a80;
+    background: var(--primary-gradient);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+    padding: 1.75em 0;
+    // transition: padding 500ms ease-in-out;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75em;
+    width: 90%;
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+.logo {
+    max-width: 200px;
+    object-fit: contain;
+    // @media only screen and (max-height: 450px) {
+    //     display: none;
+    //     opacity: 0;
+    // }
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    gap: 2.25em;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    & > li {
+        position: relative;
+        text-align: center;
+
+        & > a {
+            display: block;
+            opacity: 0.7;
+            transition: opacity 400ms ease-out, letter-spacing 400ms ease-out;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 10px;
+                width: 70%;
+                height: 2px;
+                border-radius: 999px;
+                background: #e0e0e0;
+                transition: width 400ms ease-out;
+                opacity: 0.6;
+            }
+            &:hover {
+                opacity: 1;
+                letter-spacing: 0.25em;
+                &::after {
+                    width: 90%;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+.cta {
+    padding: 12px 28px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    background: #fff;
+    color: #004a80;
+    line-height: 1;
+    max-width: 280px;
+    display: none;
+    opacity: 0;
+}
+
+@media only screen and (min-width: 660px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .navbar {
+        // it stops the sudden change in the size of navbar when the cta button is added
+        padding: 1.4375em 0;
+    }
+    .cta {
+        display: block;
+        opacity: 1;
+    }
+    .menu {
+        font-size: 1.125em;
+    }
+}

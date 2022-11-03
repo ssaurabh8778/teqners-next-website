@@ -1,0 +1,169 @@
+.footer {
+    width: 100%;
+    background: #004a80;
+    position: relative;
+    z-index: 3;
+    // background: var(--primary-gradient);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(to bottom, transparent, hsl(200, 80%, 30%));
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3.75rem 0 2rem;
+
+    & > * {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.logo,
+.logoInMiddle {
+    width: 90%;
+    max-width: 280px;
+    align-self: center;
+}
+
+.logoInMiddle {
+    display: none;
+    opacity: 0;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.leftList {
+    &__outer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__inner {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0.8;
+    }
+}
+
+.rightList {
+    &__outer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__inner {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0.8;
+    }
+}
+.rowWithIconOnLeft {
+    display: flex;
+    align-items: flex-end;
+}
+
+.iconInListItem {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+}
+
+.listTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.bottomRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.socialMenu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socialLink {
+    width: 32px;
+    height: 32px;
+    img {
+        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+        -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+    }
+}
+
+.copy {
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+@media only screen and (min-width: 668px) {
+    .inner {
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        width: 90%;
+        margin-inline: auto;
+
+        & > * {
+            /* flex: 1; */
+            /* margin-inline: auto; */
+        }
+    }
+    .leftList__outer {
+        margin-right: auto;
+    }
+    .rightList__outer {
+        margin-left: auto;
+    }
+    .bottomRow {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .copy {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .logo {
+        display: none;
+        opacity: 0;
+    }
+
+    .logoInMiddle {
+        display: block;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 250px;
+    }
+}
