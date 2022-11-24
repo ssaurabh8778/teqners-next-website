@@ -173,7 +173,7 @@ const Work: React.FC = () => {
                     ))}
                 </div>
                 <div className={styles.portfolio}>
-                    {portfolio.map((item) => (
+                    {portfolio.slice(0, 4).map((item) => (
                         <PortfolioCard {...item} key={item.id}></PortfolioCard>
                     ))}
                 </div>

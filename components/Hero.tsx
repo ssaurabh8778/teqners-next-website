@@ -27,36 +27,34 @@ const Hero: React.FC<props> = ({ navRef: navRef }: props) => {
     useEffect(() => {
         resizeSection(navRef, heroRef);
         window.addEventListener("resize", () => resizeSection(navRef, heroRef));
-        return () =>
+        window.addEventListener("orientationchange", () =>
+            resizeSection(navRef, heroRef)
+        );
+        return () => {
             window.removeEventListener("resize", () =>
                 resizeSection(navRef, heroRef)
             );
+            window.removeEventListener("orientationchange", () =>
+                resizeSection(navRef, heroRef)
+            );
+        };
     }, [navRef, heroRef]);
 
     return (
         <div className={styles.hero} ref={heroRef}>
             <div className={styles.container}>
-                <h1 className={"srOnly"} title="Teqners">
+                <h1 className={styles.title} title="Teqners">
                     Teqners
                 </h1>
 
-                <picture className={styles.titleImg}>
-                    <source
-                        media="(min-width:740px)"
-                        srcSet={"../hero-title.png"}
-                    />
-                    <img src={"/logo--text-2x4.svg"} alt="Teqners" />
-                </picture>
+                <h6 className={styles.slogan}>Your trusted tech partner</h6>
+                <p className={styles.para}>
+                    We strive to turn your aspirations into reality. The world
+                    is transformed by ideas and beliefs. If you believe that
+                    your idea can transform the world, we are here to turn it
+                    into reality.
+                </p>
 
-                <div className={styles.textGroup}>
-                    <h5 className={styles.slogan}>Your trusted tech partner</h5>
-                    <p className={styles.para}>
-                        We strive to turn your aspirations into reality. The
-                        world is transformed by ideas and beliefs. If you
-                        believe that your idea can transform the world, we are
-                        here to turn it into reality.
-                    </p>
-                </div>
                 <div className={styles.btnGroup}>
                     <button type="button" className={styles.cta}>
                         Request a Quote

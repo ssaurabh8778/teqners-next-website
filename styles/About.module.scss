@@ -1,99 +1,93 @@
 .about {
-    padding: 3.5em 0 6em;
-    background: #e5e5e5;
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        #ffffff 41.47%,
-        #e5e5e5 100%
-    );
-    color: #000;
+    padding: 6.25em 0;
+    background: #00090f;
+    background: url("/about-bg.png") no-repeat center;
+    color: #f9f9f9;
+    z-index: 1;
+    position: relative;
     transition: padding 500ms ease-in-out;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: radial-gradient(
+                54.76% 54.76% at 50% 45.24%,
+                rgba(0, 0, 0, 0) 32.91%,
+                rgba(0, 9, 15, 0.6) 100%
+            ),
+            hsla(0, 0%, 0%, 0.6);
+    }
 }
 .container {
     width: 90%;
     margin-inline: auto;
-    max-width: 1024px;
+    max-width: 520px;
     font-size: 1em;
 }
 
-.rowsContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4em;
-    gap: 5em;
-    text-align: center;
-}
-
-.row {
-    display: flex;
-    flex-direction: column;
-
-    & > * {
-        margin-inline: auto;
-    }
-
-    &Content {
-        display: flex;
-        flex-direction: column;
-        // justify-content: center;
-        align-items: center;
-    }
-
-    &Img {
-        width: 60%;
-        max-height: 150px;
-        max-width: 400px;
-        & img {
-            margin-inline: auto;
-            max-height: inherit;
-        }
-    }
-
-    &Title {
-        font-size: 2em;
-        font-weight: 700;
-        margin-top: 0.5em;
-    }
-    &Desc {
-        font-size: 1em;
-        margin-top: 0.2em;
-        width: 90%;
-        opacity: 0.8;
+.content {
+    margin-top: 1.25em;
+    text-align: left;
+    margin-bottom: 2.25em;
+    line-height: 1.5em;
+    & > * + * {
+        margin-top: 1em;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .about {
-        padding: 4em 0 8em;
-    }
-    .container {
-        width: 80%;
-        font-size: 1.25em;
-    }
-    .rowsContainer {
-        text-align: left;
-        gap: 7em;
-    }
-    .row {
-        flex-direction: row;
-        & > * {
-            flex: 50%;
-        }
-        &:nth-child(2n + 1) {
-            .rowImg {
-                order: 2;
-            }
-        }
-        &Img {
-            width: 80%;
-            max-width: 100%;
-            max-height: 200px;
-        }
-        &Content {
-            align-items: flex-start;
-        }
-        &Desc {
-            max-width: 430px;
-        }
-    }
+.cta {
+    --border-width: 1px;
+    display: block;
+    width: fit-content;
+    padding: 16px 32px;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    max-width: 280px;
+    background: #000;
+    background: transparent;
+    border: var(--border-width) solid #e0e0e0;
+    color: #e0e0e0;
+    border-radius: 999px;
 }
+
+// @media only screen and (min-width: 768px) {
+//     .about {
+//         padding: 4em 0 8em;
+//     }
+//     .container {
+//         width: 80%;
+//         font-size: 1.25em;
+//     }
+//     .rowsContainer {
+//         text-align: left;
+//         gap: 7em;
+//     }
+//     .row {
+//         flex-direction: row;
+//         & > * {
+//             flex: 50%;
+//         }
+//         &:nth-child(2n + 1) {
+//             .rowImg {
+//                 order: 2;
+//             }
+//         }
+//         &Img {
+//             width: 80%;
+//             max-width: 100%;
+//             max-height: 200px;
+//         }
+//         &Content {
+//             align-items: flex-start;
+//         }
+//         &Desc {
+//             max-width: 430px;
+//         }
+//     }
+// }

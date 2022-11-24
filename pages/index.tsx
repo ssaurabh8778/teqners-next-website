@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styles from "/styles/Home.module.css";
+import styles from "/styles/Home.module.scss";
 import Head from "next/head";
 import Cta from "../components/Cta";
 import Hero from "../components/Hero";
@@ -18,11 +18,13 @@ const Home: NextPage = ({ navRef }: any) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Hero navRef={navRef} />
-            <About />
-            <Services />
-            <Work />
-            <Cta />
+            <main className={styles.main}>
+                <Hero navRef={navRef} />
+                <About />
+                <Services />
+                <Work />
+                <Cta />
+            </main>
         </>
     );
 };
