@@ -1,44 +1,13 @@
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import styles from "/styles/Hero.module.scss";
+import variables from "/styles/variables.module.scss";
 
 type props = {
     navRef: React.RefObject<HTMLInputElement>;
 };
 const Hero: React.FC<props> = ({ navRef: navRef }: props) => {
     const heroRef: React.RefObject<HTMLInputElement> = useRef(null);
-    const resizeSection = (
-        controllerRef: React.RefObject<HTMLInputElement>,
-        sectionRef: React.RefObject<HTMLInputElement>
-    ): void => {
-        if (controllerRef?.current && sectionRef?.current) {
-            // document.getElementsByTagName(
-            //     "html"
-            // )[0].style.scrollPaddingTop = `${controllerRef.current.clientHeight}px`;
-            document
-                .getElementsByTagName("html")[0]
-                .style.setProperty(
-                    "--navbar-height",
-                    `${controllerRef.current.clientHeight}px`
-                );
-            // sectionRef.current.style.marginTop = `${controllerRef.current.clientHeight}px`;
-            // sectionRef.current.style.minHeight = `calc(100vh - ${controllerRef.current.clientHeight}px)`;
-        }
-    };
-    useEffect(() => {
-        resizeSection(navRef, heroRef);
-        window.addEventListener("resize", () => resizeSection(navRef, heroRef));
-        window.addEventListener("orientationchange", () =>
-            resizeSection(navRef, heroRef)
-        );
-        return () => {
-            window.removeEventListener("resize", () =>
-                resizeSection(navRef, heroRef)
-            );
-            window.removeEventListener("orientationchange", () =>
-                resizeSection(navRef, heroRef)
-            );
-        };
-    }, [navRef, heroRef]);
 
     return (
         <div className={styles.hero} ref={heroRef}>
@@ -56,10 +25,12 @@ const Hero: React.FC<props> = ({ navRef: navRef }: props) => {
                 </p>
 
                 <div className={styles.btnGroup}>
-                    <button type="button" className={styles.cta}>
-                        Request a Quote
-                    </button>
-                    <a href="#about" className={styles.secondaryBtn}>
+                    <Link href="/contact">
+                        <a className={variables.primaryBtnClass}>
+                            Request a Quote
+                        </a>
+                    </Link>
+                    <a href="#about" className={variables.secondaryBtnClass}>
                         Learn more
                     </a>
                 </div>

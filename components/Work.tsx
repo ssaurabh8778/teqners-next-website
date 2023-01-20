@@ -155,7 +155,9 @@ const Work: React.FC = () => {
     return (
         <div className={styles.work} id="work">
             <div className={styles.container}>
-                <h2 className={styles.title}>Work</h2>
+                <div className={styles.heading}>
+                    <h2 className={"section-title"}>Work</h2>
+                </div>
                 <div className={styles.filters}>
                     {filters.map((filter, i) => (
                         <button

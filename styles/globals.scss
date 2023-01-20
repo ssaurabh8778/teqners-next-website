@@ -1,3 +1,4 @@
+@use "font" as *;
 :root {
     --primary-color-hsl: 205, 100%, 25%;
     --primary-gradient: linear-gradient(90deg, #004a80 0%, #003c69 100%);
@@ -20,8 +21,7 @@
 
 html,
 body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
-        Helvetica Neue, sans-serif;
+    font-family: $primaryFont;
     font-variant-numeric: lining-nums;
 }
 
@@ -41,8 +41,7 @@ body {
 button,
 p,
 a {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Ubuntu, Helvetica Neue, sans-serif;
+    font-family: $secondaryFont;
 }
 
 a {
@@ -58,6 +57,9 @@ img {
 button {
     cursor: pointer;
     border: none;
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 .srOnly {
@@ -73,16 +75,85 @@ button {
     border: 0;
 }
 
-.section-title {
-    font-size: 3.5em;
-    font-weight: 800;
+.btn-primary,
+.btn-primary--small,
+.btn-primary--large,
+.btn-secondary,
+.btn-secondary--small,
+.btn-secondary--large {
+    --padding: 1em 2em;
+    @extend %p2-upper;
+    display: block;
+    width: fit-content;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    padding: var(--padding);
+    text-decoration: none;
+    transition: background 300ms ease-in-out, transform 100ms ease-out;
+
+    &:focus-visible,
+    &:focus-within {
+        transform: scale(0.95);
+    }
 }
+
+.btn-primary,
+.btn-primary--small,
+.btn-primary--large {
+    background: #004a80;
+    background: var(--primary-gradient);
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: background 300ms ease-in-out;
+    }
+    &:not(:disabled):hover::before {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.btn-secondary,
+.btn-secondary--small,
+.btn-secondary--large {
+    --border-width: 1px;
+    background: #000;
+    background: transparent;
+    border: var(--border-width) solid white;
+
+    &:not(:disabled):hover {
+        background: hsla(0, 0%, 100%, 0.15);
+    }
+}
+
+.btn-primary--large,
+.btn-secondary--large {
+    @extend %p1-upper;
+}
+
+.btn-primary--small,
+.btn-secondary--small {
+    --padding: 0.75em 1.75em;
+}
+
+.section-title {
+    @extend %h2;
+}
+
 .section-subtitle {
-    font-size: 1.25em;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    @extend %p1-upper;
     opacity: 0.6;
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Ubuntu, Helvetica Neue, sans-serif;
 }
+
+// #__next {
+//     min-height: 100%;
+// }

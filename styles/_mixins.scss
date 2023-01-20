@@ -1,0 +1,15 @@
+@mixin font(
+    $size,
+    $family,
+    $weight,
+    $line-height,
+    $letter-spacing,
+    $case: "none"
+) {
+    font-size: $size;
+    font-family: $family;
+    font-weight: $weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-transform: $case;
+}

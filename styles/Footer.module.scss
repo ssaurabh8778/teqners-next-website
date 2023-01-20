@@ -1,7 +1,8 @@
 .footer {
     width: 100%;
-    padding: 3.75rem 0 2rem;
+    padding: 3.75em 0 2em;
     background: #00090f;
+    transition: padding 500ms ease-in-out, font-size 500ms ease-in-out;
 }
 .container {
     display: flex;
@@ -103,4 +104,9 @@
     position: relative;
     padding-top: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media only screen and (min-width: 770px) {
+    .footer {
+        padding: 4em 0 2em;
+    }
 }

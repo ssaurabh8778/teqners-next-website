@@ -1,7 +1,8 @@
 .work {
-    padding: 6em 0;
+    padding: 8em 0;
     background: #00090f;
     background: radial-gradient(50% 50% at 50% 50%, #000f1a 0%, #00090f 100%);
+    transition: padding 500ms ease-in-out, font-size 500ms ease-in-out;
 }
 
 .container {
@@ -10,9 +11,7 @@
     max-width: 1200px;
 }
 
-.title {
-    font-size: 3em;
-    font-weight: 800;
+.heading {
     text-align: center;
 }
 
@@ -43,8 +42,9 @@
 
 .filterButtonActive {
     background: hsla(0, 0%, 80%, 0.3);
+    box-shadow: inset 0px 0px 0px 1px #fff;
     &:hover {
-        background: hsla(0, 0%, 80%, 0.6);
+        background: hsla(0, 0%, 80%, 0.5);
     }
 }
 

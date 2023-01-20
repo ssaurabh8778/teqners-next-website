@@ -1,0 +1,39 @@
+@use "font" as *;
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.label {
+    @extend %p2;
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    opacity: 0.9;
+    width: 100%;
+}
+
+.input,
+.textarea {
+    @extend %p2;
+    height: 100%;
+    background: #000;
+    background: transparent;
+    border: none;
+    margin-top: 2em;
+    padding: 0em 0 1em;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
+    resize: none;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: #fff;
+        opacity: 0.2;
+    }
+}

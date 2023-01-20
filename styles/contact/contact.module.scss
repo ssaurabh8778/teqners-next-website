@@ -1,0 +1,105 @@
+@use "/styles/font" as *;
+
+.main {
+    background: linear-gradient(
+        180deg,
+        #000f19 0%,
+        #010c14 0.01%,
+        #000f19 100%
+    );
+}
+
+.engagingSection {
+    position: relative;
+    padding-top: var(--navbar-height);
+    transition: max-width 400ms ease-in-out, padding 600ms ease-in-out;
+}
+
+.engagingImage {
+    & img {
+        width: 100%;
+        max-height: 40vmax;
+        object-fit: cover;
+    }
+}
+
+.engagingText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + var(--navbar-height) / 2));
+    @extend %h3;
+    font-size: calc(2.5em + 1vw);
+    text-align: center;
+    width: 80%;
+}
+
+.contactFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 700px) {
+    .engagingImage {
+        & img {
+            max-height: 50vmax;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .main {
+        background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.2) 47.71%,
+                rgba(0, 0, 0, 0) 100%
+            ),
+            #000f1a;
+    }
+    .container {
+        max-width: 1440px;
+        display: flex;
+        margin: 0 auto;
+        padding-top: var(--navbar-height);
+        background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.2) 47.71%,
+                rgba(0, 0, 0, 0) 100%
+            ),
+            #000f1a;
+        min-height: max(100vh, 600px);
+    }
+
+    .engagingSection {
+        padding-top: 0;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .engagingImage {
+        height: 100%;
+        & img {
+            max-height: none;
+            height: 100%;
+        }
+    }
+    .engagingText {
+        transform: translate(-50%, -50%);
+        font-size: 4em;
+    }
+    .contactFormContainer {
+        flex: 1;
+        padding: 2em 0;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+    }
+    .engagingSection {
+        max-width: 600px;
+        // padding-top: 3em;
+        padding-bottom: 3em;
+    }
+}

@@ -1,24 +1,33 @@
+import Link from "next/link";
 import styles from "/styles/Footer.module.scss";
 
 const Footer: React.FC = () => {
     return (
-        <div className={styles.footer} id="footer">
+        <footer className={styles.footer} id="footer">
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.companyList}>
                         <h5 className={styles.listTitle}>Company</h5>
                         <ul className={styles.companyLinks}>
                             <li>
-                                <a href="#about">About</a>
+                                <Link href={"/#about"}>
+                                    <a>About</a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#services">Services</a>
+                                <Link href={"/#services"}>
+                                    <a>Services</a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#work">Work</a>
+                                <Link href={"/#work"}>
+                                    <a>Work</a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <Link href={"/contact"}>
+                                    <a>Contact</a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -114,7 +123,7 @@ const Footer: React.FC = () => {
                     Copyright &copy; 2022 Teqners. All rights reserved.
                 </p>
             </div>
-        </div>
+        </footer>
     );
 };
 

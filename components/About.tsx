@@ -1,4 +1,5 @@
 import styles from "/styles/About.module.scss";
+import variables from "/styles/variables.module.scss";
 
 const About: React.FC = () => {
     return (
@@ -18,7 +19,8 @@ const About: React.FC = () => {
                         shown to the right audience and grow faster.
                     </p>
                 </div>
-                <a href="#services" className={styles.cta}>
+
+                <a href="#services" className={variables.secondaryBtnClass}>
                     Our Services
                 </a>
             </div>

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import styles from "/styles/Cta.module.scss";
+import variables from "/styles/variables.module.scss";
 
 const Cta: React.FC = () => {
     return (
@@ -11,10 +13,11 @@ const Cta: React.FC = () => {
                 <p className={styles.ctaParagraph}>
                     No payment required, talk to our expert for free.
                 </p>
-
-                <button type="button" className={styles.ctaBtn}>
-                    Request a Quote
-                </button>
+                <Link href="/contact">
+                    <a className={variables.primaryBtnLargeClass}>
+                        Request a Quote
+                    </a>
+                </Link>
             </div>
         </div>
     );
