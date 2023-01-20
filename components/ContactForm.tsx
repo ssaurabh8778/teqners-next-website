@@ -6,6 +6,7 @@ import { FileUploader } from "react-drag-drop-files";
 import FileItem from "./Atoms/FileItem";
 import Email from "./utils/smtp";
 
+const receiverEmail = "contact@teqners.com";
 const ContactForm: React.FC = () => {
     const [files, setFiles] = useState<File[]>([]);
     const [successMsg, setSuccessMsg] = useState("");
@@ -113,7 +114,7 @@ const ContactForm: React.FC = () => {
             Host: "smtp.elasticemail.com",
             Username: process.env.NEXT_PUBLIC_SMTP_EMAIL,
             Password: process.env.NEXT_PUBLIC_SMTP_PASS,
-            To: "g03tiwari@gmail.com",
+            To: receiverEmail,
             From: process.env.NEXT_PUBLIC_SMTP_EMAIL,
             Subject: nameAbbr + ": " + form?.subject || "Project",
             Body:
