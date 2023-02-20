@@ -1,0 +1,46 @@
+.about {
+    padding: calc(6.25em + 5vw) 0;
+    background: #00090f;
+    background: url("/about-bg.png") no-repeat center;
+    color: #f9f9f9;
+    z-index: 1;
+    position: relative;
+    transition: padding 500ms ease-in-out;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: radial-gradient(
+                54.76% 54.76% at 50% 45.24%,
+                rgba(0, 0, 0, 0) 32.91%,
+                rgba(0, 9, 15, 0.6) 100%
+            ),
+            hsla(0, 0%, 0%, 0.6);
+    }
+}
+.container {
+    width: 90%;
+    margin-inline: auto;
+    max-width: 520px;
+    font-size: 1em;
+}
+
+.content {
+    margin-top: 1.25em;
+    text-align: left;
+    margin-bottom: 2.25em;
+    line-height: 1.5em;
+    & > * + * {
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .about {
+        padding: 10em 0;
+    }
+}

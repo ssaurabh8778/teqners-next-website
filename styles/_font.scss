@@ -1,0 +1,81 @@
+@use "mixins" as *;
+
+$primaryFont: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
+    Helvetica Neue, sans-serif;
+$secondaryFont: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Ubuntu, Helvetica Neue, sans-serif;
+
+%small {
+    @include font(0.75em, $secondaryFont, 400, 1.5em, 0em);
+}
+
+%h1 {
+    @include font(4em, $primaryFont, 900, 1.2em, -0.04em);
+}
+%h2 {
+    @include font(3.5em, $primaryFont, 800, 1.15em, -0.04em);
+}
+%h3 {
+    @include font(2.5em, $primaryFont, 700, 1.2em, -0.04em);
+}
+%h4 {
+    @include font(2.25em, $primaryFont, 700, 1.3em, 0em);
+}
+%h5 {
+    @include font(1.75em, $primaryFont, 700, 1.3em, 0em);
+}
+%h6 {
+    @include font(1.5em, $primaryFont, 700, 1.3em, 0em);
+}
+
+%p2 {
+    @include font(1em, $secondaryFont, 400, 1.5em, 0em);
+}
+
+%p1 {
+    @include font(1.25em, $secondaryFont, 400, 1.5em, 0em);
+}
+
+%h1-upper {
+    @extend %h1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+%h2-upper {
+    @extend %h2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+%h3-upper {
+    @extend %h3;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+%h4-upper {
+    @extend %h4;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+%h5-upper {
+    @extend %h5;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+%h6-upper {
+    @extend %h6;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+%p2-upper {
+    @extend %p2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+%p1-upper {
+    @extend %p1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}

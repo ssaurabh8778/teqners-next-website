@@ -1,0 +1,112 @@
+.footer {
+    width: 100%;
+    padding: 3.75em 0 2em;
+    background: #00090f;
+    transition: padding 500ms ease-in-out, font-size 500ms ease-in-out;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+.contactList,
+.companyList {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactLinks,
+.companyLinks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    opacity: 0.8;
+}
+
+.rowWithIconOnLeft {
+    display: flex;
+    align-items: flex-end;
+}
+
+.iconInListItem {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+}
+
+.listTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0.25em;
+    line-height: 1.3em;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 10em;
+    order: 2;
+    @media only screen and (min-width: 770px) {
+        order: initial;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.socialTitle {
+    font-size: 1.75em;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 0.5em;
+}
+.socialMenu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    @media only screen and (min-width: 770px) {
+        justify-content: center;
+    }
+}
+
+.socialLink {
+    width: 2.25em;
+    height: 2.25em;
+    & picture {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.logo {
+    max-width: 250px;
+}
+
+.copy {
+    margin-top: 1.5em;
+    font-size: 1em;
+    opacity: 0.6;
+    text-align: center;
+    position: relative;
+    padding-top: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media only screen and (min-width: 770px) {
+    .footer {
+        padding: 4em 0 2em;
+    }
+}
