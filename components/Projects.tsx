@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import styles from "/styles/Work.module.scss";
+import styles from "/styles/Projects.module.scss";
 
 type portfolioCardProps = {
     img: {
@@ -55,7 +55,7 @@ const PortfolioCard: React.FC<portfolioCardProps> = ({
     );
 };
 
-const Work: React.FC = () => {
+const Projects: React.FC = () => {
     const projectsList = useMemo(
         () => [
             {
@@ -153,10 +153,10 @@ const Work: React.FC = () => {
     // }, [projectsList]);
 
     return (
-        <div className={styles.work} id="work">
+        <div className={styles.work} id="projects">
             <div className={styles.container}>
                 <div className={styles.heading}>
-                    <h2 className={"section-title"}>Work</h2>
+                    <h2 className={"section-title"}>Projects</h2>
                 </div>
                 <div className={styles.filters}>
                     {filters.map((filter, i) => (
@@ -184,4 +184,4 @@ const Work: React.FC = () => {
     );
 };
 
-export default Work;
+export default Projects;

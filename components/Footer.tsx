@@ -1,6 +1,62 @@
 import Link from "next/link";
 import styles from "/styles/Footer.module.scss";
 
+const companyLinks = [
+    {
+        title: "About",
+        url: "/#about",
+        isExternal: false,
+    },
+    {
+        title: "Services",
+        url: "/#services",
+        isExternal: false,
+    },
+    {
+        title: "Projects",
+        url: "/#projects",
+        isExternal: false,
+    },
+    {
+        title: "Contact",
+        url: "/contact",
+        isExternal: true,
+    },
+];
+
+const socials = [
+    {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/company/teqners/",
+        imgSrc: "/linkedin.svg",
+    },
+    {
+        name: "Instagram",
+        url: "https://www.instagram.com/teqners_connect/",
+        imgSrc: "/instagram.svg",
+    },
+];
+
+const contacts = [
+    {
+        name: "Telephone",
+        url: "#",
+        imgSrc: "/tele.svg",
+        value: "+91 987654310",
+    },
+    {
+        name: "Email",
+        url: "mailto:contact@teqners.com",
+        imgSrc: "/email.svg",
+        value: "contact@teqners.com",
+    },
+    {
+        name: "Location",
+        url: "#",
+        imgSrc: "/location.svg",
+        value: "Bangalore, India",
+    },
+];
 const Footer: React.FC = () => {
     return (
         <footer className={styles.footer} id="footer">
@@ -9,58 +65,38 @@ const Footer: React.FC = () => {
                     <div className={styles.companyList}>
                         <h5 className={styles.listTitle}>Company</h5>
                         <ul className={styles.companyLinks}>
-                            <li>
-                                <Link href={"/#about"}>
-                                    <a>About</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/#services"}>
-                                    <a>Services</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/#work"}>
-                                    <a>Work</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/contact"}>
-                                    <a>Contact</a>
-                                </Link>
-                            </li>
+                            {companyLinks.map(
+                                ({ title, url, isExternal }, index) => (
+                                    <li key={index}>
+                                        {isExternal ? (
+                                            <Link href={url}>
+                                                <a>{title}</a>
+                                            </Link>
+                                        ) : (
+                                            <a href={url}>{title}</a>
+                                        )}
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </div>
                     <div className={styles.socials}>
                         <div className={styles.followUs}>
                             <h5 className={styles.socialTitle}>Follow us on</h5>
                             <div className={styles.socialMenu}>
-                                <a
-                                    href="https://www.linkedin.com/company/teqners/"
-                                    className={styles.socialLink}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <picture>
-                                        <img
-                                            src={"/linkedin.svg"}
-                                            alt="Linkedin"
-                                        />
-                                    </picture>
-                                </a>
-                                <a
-                                    href="https://www.instagram.com/teqners_connect/"
-                                    className={styles.socialLink}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <picture>
-                                        <img
-                                            src={"/instagram.svg"}
-                                            alt="Instagram"
-                                        />
-                                    </picture>
-                                </a>
+                                {socials.map(({ name, url, imgSrc }, index) => (
+                                    <a
+                                        href={url}
+                                        className={styles.socialLink}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        key={index}
+                                    >
+                                        <picture>
+                                            <img src={imgSrc} alt={name} />
+                                        </picture>
+                                    </a>
+                                ))}
                             </div>
                         </div>
                         <picture className={styles.logo}>
@@ -70,51 +106,27 @@ const Footer: React.FC = () => {
                     <div className={styles.contactList}>
                         <h5 className={styles.listTitle}>Contact</h5>
                         <ul className={styles.contactLinks}>
-                            <li>
-                                <a
-                                    href="#"
-                                    className={styles.rowWithIconOnLeft}
-                                >
-                                    <picture>
-                                        <img
-                                            src={"/tele.svg"}
-                                            alt="telephone"
-                                            className={styles.iconInListItem}
-                                        />
-                                    </picture>
-                                    +91 987654310
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="mailto:contact@teqners.com"
-                                    className={styles.rowWithIconOnLeft}
-                                >
-                                    <picture>
-                                        <img
-                                            src={"/mail.svg"}
-                                            alt="mail"
-                                            className={styles.iconInListItem}
-                                        />
-                                    </picture>
-                                    contact@teqners.com
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className={styles.rowWithIconOnLeft}
-                                >
-                                    <picture>
-                                        <img
-                                            src={"/location.svg"}
-                                            alt="location"
-                                            className={styles.iconInListItem}
-                                        />
-                                    </picture>
-                                    Delhi, India
-                                </a>
-                            </li>
+                            {contacts.map(
+                                ({ name, url, imgSrc, value }, index) => (
+                                    <li key={index}>
+                                        <a
+                                            href={url}
+                                            className={styles.rowWithIconOnLeft}
+                                        >
+                                            <picture>
+                                                <img
+                                                    src={imgSrc}
+                                                    alt={name}
+                                                    className={
+                                                        styles.iconInListItem
+                                                    }
+                                                />
+                                            </picture>
+                                            {value}
+                                        </a>
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </div>
                 </div>

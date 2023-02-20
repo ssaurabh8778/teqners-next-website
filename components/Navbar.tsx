@@ -9,23 +9,21 @@ type props = {
 const Menu = () => (
     <>
         <li>
-            <Link href={"/#about"}>
-                <a>About</a>
-            </Link>
+            <a href={"/#about"}>About</a>
         </li>
         <li>
-            <Link href={"/#services"}>
-                <a>Services</a>
-            </Link>
+            <a href={"/#services"}>Services</a>
         </li>
         <li>
-            <Link href={"/#work"}>
-                <a>Work</a>
+            <a href={"/#projects"}>Projects</a>
+        </li>
+        <li>
+            <Link href={"/contact"}>
+                <a className={variables.secondaryBtnSmallClass}>
+                    Request a quote
+                </a>
             </Link>
         </li>
-        <Link href={"/contact"}>
-            <a className={variables.secondaryBtnSmallClass}>Request a quote</a>
-        </Link>
     </>
 );
 const Navbar: React.FC<props> = ({ navRef }: props) => {

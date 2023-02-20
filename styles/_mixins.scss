@@ -4,7 +4,7 @@
     $weight,
     $line-height,
     $letter-spacing,
-    $case: "none"
+    $case: initial
 ) {
     font-size: $size;
     font-family: $family;

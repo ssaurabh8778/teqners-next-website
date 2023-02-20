@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-
 import Head from "next/head";
 import ContactForm from "../components/ContactForm";
 import styles from "/styles/contact/contact.module.scss";
@@ -26,7 +25,9 @@ const Contact: NextPage = () => {
                             />
                         </picture>
                         <h2 className={styles.engagingText}>
-                            Have a project? We’d love to help.
+                            Have a project?
+                            <br />
+                            We’d love to help.
                         </h2>
                     </div>
                     <div className={styles.contactFormContainer}>

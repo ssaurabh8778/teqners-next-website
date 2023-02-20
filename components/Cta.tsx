@@ -7,7 +7,7 @@ const Cta: React.FC = () => {
         <div className={styles.cta}>
             <div className={styles.container}>
                 <h2 className={styles.title}>
-                    Grow your business online with <u>Teqners</u>
+                    Grow your business online with Teqners
                 </h2>
 
                 <p className={styles.ctaParagraph}>

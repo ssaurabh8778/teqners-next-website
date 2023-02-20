@@ -5,7 +5,7 @@ import Cta from "../components/Cta";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
-import Work from "../components/Work";
+import Projects from "../components/Projects";
 
 const Home: NextPage = ({ navRef }: any) => {
     return (
@@ -22,7 +22,7 @@ const Home: NextPage = ({ navRef }: any) => {
                 <Hero navRef={navRef} />
                 <About />
                 <Services />
-                <Work />
+                {/* <Projects /> */}
                 <Cta />
             </main>
         </>
