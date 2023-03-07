@@ -1,0 +1,12 @@
+@use "../font" as *;
+.container {
+    padding-top: var(--navbar-height);
+    // max-width: 1200px;
+    margin: 0 auto;
+}
+.projectTitle {
+    @extend %h2;
+    text-align: center;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}

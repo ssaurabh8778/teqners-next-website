@@ -18,6 +18,11 @@ const About: React.FC = () => {
                         tech agency. We want to make sure that your business get
                         shown to the right audience and grow faster.
                     </p>
+                    <p>
+                        The world is transformed by ideas and beliefs. If you
+                        believe that your idea can transform the world, we are
+                        here to turn it into reality.
+                    </p>
                 </div>
 
                 <a href="#services" className={variables.secondaryBtnClass}>

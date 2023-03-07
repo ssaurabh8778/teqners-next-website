@@ -1,0 +1,142 @@
+.gallery {
+    --width: 450px;
+    --height: calc(var(--width) * 2);
+    --columns: 4;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    max-width: calc(var(--width) * var(--columns));
+    margin-inline: auto;
+
+    & img {
+        object-fit: cover;
+        object-position: center;
+        max-height: var(--height);
+    }
+
+    &__item {
+        position: relative;
+        top: 0;
+        left: 0;
+        min-width: var(--width);
+        flex: 1;
+        transition: transform 1s linear, top 1s linear, left 1s linear;
+        cursor: pointer;
+    }
+}
+
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000df;
+    color: #fff;
+    z-index: 100;
+    opacity: 1;
+    transition: z-index 500ms linear, opacity 500ms linear;
+    user-select: none;
+
+    &--hidden {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &__item {
+        max-height: 100%;
+        padding: 1em;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: left 500ms ease-out;
+        z-index: 0;
+        &--prev {
+            left: -50%;
+        }
+        &--next {
+            left: 150%;
+        }
+    }
+
+    &__left,
+    &__right {
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        z-index: 1;
+        background: #00000000;
+        cursor: pointer;
+
+        &[data-disabled="true"] {
+            cursor: default;
+        }
+    }
+    &__left {
+        top: 0;
+        left: 0;
+        &:not([data-disabled="true"]) {
+            background: linear-gradient(
+                to right,
+                #000000dd,
+                transparent,
+                transparent
+            );
+        }
+    }
+    &__right {
+        top: 0;
+        right: 0;
+        &:not([data-disabled="true"]) {
+            background: linear-gradient(
+                to left,
+                #000000dd,
+                transparent,
+                transparent
+            );
+        }
+    }
+
+    &__btn {
+        position: fixed;
+        border: none;
+        font-family: monospace;
+        color: inherit;
+        cursor: pointer;
+        border-radius: 999px;
+        width: 36px;
+        height: 36px;
+
+        background: #000000aa;
+        & > * {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &[disabled] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        &--left,
+        &--right {
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0.5em;
+        }
+        &--left {
+            left: 0;
+        }
+        &--right {
+            right: 0;
+        }
+        &--close {
+            top: 0;
+            right: 0;
+            margin: 2em 1em;
+            z-index: 99;
+        }
+    }
+}

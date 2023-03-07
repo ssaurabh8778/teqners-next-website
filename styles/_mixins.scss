@@ -1,10 +1,10 @@
 @mixin font(
-    $size,
-    $family,
-    $weight,
-    $line-height,
-    $letter-spacing,
-    $case: initial
+    $size: inherit,
+    $family: inherit,
+    $weight: inherit,
+    $line-height: inherit,
+    $letter-spacing: inherit,
+    $case: inherit
 ) {
     font-size: $size;
     font-family: $family;

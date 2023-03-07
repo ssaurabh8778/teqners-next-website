@@ -1,22 +1,38 @@
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "/styles/Navbar.module.scss";
 import variables from "/styles/variables.module.scss";
 
-type props = {
-    navRef: React.RefObject<HTMLInputElement>;
-};
+const companyLinks = [
+    {
+        title: "About",
+        url: "/#about",
+        isExternal: false,
+    },
+    {
+        title: "Services",
+        url: "/#services",
+        isExternal: false,
+    },
+    {
+        title: "Projects",
+        url: "/projects",
+        isExternal: true,
+    },
+];
 const Menu = () => (
     <>
-        <li>
-            <a href={"/#about"}>About</a>
-        </li>
-        <li>
-            <a href={"/#services"}>Services</a>
-        </li>
-        <li>
-            <a href={"/#projects"}>Projects</a>
-        </li>
+        {companyLinks.map(({ title, url, isExternal }, index) => (
+            <li key={index}>
+                {isExternal ? (
+                    <Link href={url}>
+                        <a>{title}</a>
+                    </Link>
+                ) : (
+                    <a href={url}>{title}</a>
+                )}
+            </li>
+        ))}
         <li>
             <Link href={"/contact"}>
                 <a className={variables.secondaryBtnSmallClass}>
@@ -26,37 +42,63 @@ const Menu = () => (
         </li>
     </>
 );
-const Navbar: React.FC<props> = ({ navRef }: props) => {
+const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuVersion, setMenuVersion] = useState("mobile");
-    const switchMenu = useCallback(() => {
-        if (navRef?.current) {
-            if (navRef?.current?.clientWidth >= 900) {
-                setMenuVersion("desktop");
-                // console.log("Switched to desktop menu");
-            } else {
-                setMenuVersion("mobile");
-                // console.log("Switched to mobile menu");
-            }
-        }
-    }, [navRef]);
+    const navRef = useRef<any>(null);
+
+    // const setHeightInCss = (): void => {
+    //     if (navRef?.current) {
+    //         console.log(`${navRef.current.clientHeight}px`);
+    //         document
+    //             .getElementsByTagName("html")[0]
+    //             .style.setProperty(
+    //                 "--navbar-height",
+    //                 `${navRef.current.clientHeight}px`
+    //             );
+    //     }
+    // };
+
+    const setMenu = useCallback(
+        () =>
+            navRef?.current?.clientWidth >= 800
+                ? setMenuVersion("desktop")
+                : setMenuVersion("mobile"),
+        [navRef]
+    );
 
     useEffect(() => {
+        // setHeightInCss();
+        setMenu();
         window.addEventListener("resize", () => {
-            switchMenu();
+            // setHeightInCss();
+            setMenu();
         });
-        return () =>
+        window.addEventListener("orientationchange", () => {
+            // setHeightInCss();
+            setMenu();
+        });
+        return () => {
             window.removeEventListener("resize", () => {
-                switchMenu();
+                // setHeightInCss();
+                setMenu();
             });
-    }, [navRef, switchMenu]);
+            window.removeEventListener("orientationchange", () => {
+                // setHeightInCss();
+                setMenu();
+            });
+        };
+    }, [navRef, setMenu]);
     return (
         <nav className={styles.navbar} ref={navRef}>
             <div className={styles.container}>
                 <Link href="/">
                     <a>
                         <picture className={styles.logo}>
-                            <img src={"/logo-icon--white.svg"} alt="Teqners" />
+                            <img
+                                src={"/static/logo-icon--white.svg"}
+                                alt="Teqners"
+                            />
                         </picture>
                     </a>
                 </Link>
@@ -90,19 +132,10 @@ const Navbar: React.FC<props> = ({ navRef }: props) => {
                             )}
                         </svg>
                         <ul
-                            className={styles.menuMobile}
-                            style={
-                                isMenuOpen
-                                    ? {
-                                          opacity: 1,
-                                          transform: "translate(-50%, 0%)",
-                                          backdropFilter: "blur(16px)",
-                                      }
-                                    : {
-                                          opacity: 0,
-                                          transform: "translate(-50%, -125%)",
-                                          backdropFilter: "blur(0px)",
-                                      }
+                            className={
+                                styles.menuMobile +
+                                " " +
+                                (isMenuOpen ? "" : styles["menuMobile--close"])
                             }
                         >
                             <Menu />

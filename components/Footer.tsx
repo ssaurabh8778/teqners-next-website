@@ -14,8 +14,8 @@ const companyLinks = [
     },
     {
         title: "Projects",
-        url: "/#projects",
-        isExternal: false,
+        url: "/projects",
+        isExternal: true,
     },
     {
         title: "Contact",
@@ -28,34 +28,34 @@ const socials = [
     {
         name: "Linkedin",
         url: "https://www.linkedin.com/company/teqners/",
-        imgSrc: "/linkedin.svg",
+        imgSrc: "/static/linkedin.svg",
     },
     {
         name: "Instagram",
         url: "https://www.instagram.com/teqners_connect/",
-        imgSrc: "/instagram.svg",
+        imgSrc: "/static/instagram.svg",
     },
 ];
 
 const contacts = [
-    {
-        name: "Telephone",
-        url: "#",
-        imgSrc: "/tele.svg",
-        value: "+91 987654310",
-    },
+    // {
+    //     name: "Telephone",
+    //     url: "#",
+    //     imgSrc: "/static/tele.svg",
+    //     value: "+91 987654310",
+    // },
     {
         name: "Email",
         url: "mailto:contact@teqners.com",
-        imgSrc: "/email.svg",
+        imgSrc: "/static/email.svg",
         value: "contact@teqners.com",
     },
-    {
-        name: "Location",
-        url: "#",
-        imgSrc: "/location.svg",
-        value: "Bangalore, India",
-    },
+    // {
+    //     name: "Location",
+    //     url: "#",
+    //     imgSrc: "/static/location.svg",
+    //     value: "Bangalore, India",
+    // },
 ];
 const Footer: React.FC = () => {
     return (
@@ -100,7 +100,10 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                         <picture className={styles.logo}>
-                            <img src={"/logo--white.png"} alt="teqners" />
+                            <img
+                                src={"/static/logo--white.png"}
+                                alt="teqners"
+                            />
                         </picture>
                     </div>
                     <div className={styles.contactList}>

@@ -9,6 +9,11 @@
     --toastify-color-error: #ed615e !important;
     --primary-color-hsl: 205, 100%, 25%;
     --primary-gradient: linear-gradient(90deg, #004a80 0%, #003c69 100%);
+    --primary-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
+        Helvetica Neue, sans-serif;
+    --secondary-font: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Ubuntu, Helvetica Neue, sans-serif;
+    --navbar-height: 90px;
 }
 
 *,
@@ -36,6 +41,7 @@ body {
     overflow-x: hidden;
     color: white;
     background: #00090f;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button,
@@ -84,7 +90,7 @@ button {
 .btn-secondary--small,
 .btn-secondary--large {
     --padding: 1em 2em;
-    @extend %p2-upper;
+    @extend %button;
     display: block;
     width: fit-content;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);

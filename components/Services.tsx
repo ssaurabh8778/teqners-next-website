@@ -27,21 +27,24 @@ const Services: React.FC = () => {
     const servicesList = [
         {
             id: 1,
-            img: { src: "/web-dev-icon.svg", "aria-hidden": true },
+            img: { src: "/static/web-dev-icon.svg", "aria-hidden": true },
             title: "Web Development",
             desc: "Take your business online or upgrade your existing website to convert visitors into customers and grow your business worldwide.",
         },
         {
             id: 2,
-            img: { src: "/app-dev-icon.svg", "aria-hidden": true },
+            img: { src: "/static/app-dev-icon.svg", "aria-hidden": true },
             title: "App Development",
             desc: "Go mobile first with a mobile app for your growing business.",
         },
         {
             id: 3,
-            img: { src: "/blockchain-dev-icon.svg", "aria-hidden": true },
+            img: {
+                src: "/static/blockchain-dev-icon.svg",
+                "aria-hidden": true,
+            },
             title: "Blockchain Development",
-            desc: "Web 3.0 has arrived and is growing fast. We use the unique features of blockchain technology to solve problems and create opportunities.",
+            desc: "Web 3.0 has arrived and is growing fast. We use features of blockchain technology to solve problems and create opportunities.",
         },
     ];
     return (

@@ -1,12 +1,14 @@
+@use "font" as *;
 .about {
     padding: calc(6.25em + 5vw) 0;
     background: #00090f;
-    background: url("/about-bg.png") no-repeat center;
     color: #f9f9f9;
     z-index: 1;
     position: relative;
     transition: padding 500ms ease-in-out;
-    &::before {
+
+    &::before,
+    &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -14,26 +16,34 @@
         height: 100%;
         width: 100%;
         z-index: -1;
+    }
+    &::before {
+        background: url("/static/about-bg.jpg") no-repeat center;
+        background-size: cover;
+        filter: sepia(100%) saturate(150%) hue-rotate(170deg) contrast(90%);
+    }
+    &::after {
         background: radial-gradient(
                 54.76% 54.76% at 50% 45.24%,
                 rgba(0, 0, 0, 0) 32.91%,
-                rgba(0, 9, 15, 0.6) 100%
+                rgba(0, 9, 15, 0.9) 100%
             ),
             hsla(0, 0%, 0%, 0.6);
+        // background: hsla(0, 0%, 0%, 0.75);
     }
 }
 .container {
-    width: 90%;
+    width: 80%;
     margin-inline: auto;
-    max-width: 520px;
+    max-width: 60ch;
     font-size: 1em;
 }
 
 .content {
+    @extend %p2;
     margin-top: 1.25em;
     text-align: left;
     margin-bottom: 2.25em;
-    line-height: 1.5em;
     & > * + * {
         margin-top: 1em;
     }

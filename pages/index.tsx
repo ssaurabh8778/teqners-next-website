@@ -5,9 +5,9 @@ import Cta from "../components/Cta";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
-import Projects from "../components/Projects";
+// import Portfolio from "../components/Portfolio";
 
-const Home: NextPage = ({ navRef }: any) => {
+const Home: NextPage = () => {
     return (
         <>
             <Head>
@@ -16,13 +16,12 @@ const Home: NextPage = ({ navRef }: any) => {
                     name="description"
                     content="Teqners Connect. Your trusted tech partner"
                 />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
-                <Hero navRef={navRef} />
+                <Hero />
                 <About />
                 <Services />
-                {/* <Projects /> */}
+                {/* <Portfolio /> */}
                 <Cta />
             </main>
         </>

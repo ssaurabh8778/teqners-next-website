@@ -7,12 +7,8 @@ const Contact: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Teqners</title>
-                <meta
-                    name="description"
-                    content="Teqners Connect. Your trusted tech partner"
-                />
-                <link rel="icon" href="/favicon.ico" />
+                <title>Contact - Teqners</title>
+                <meta name="description" content="Contact - Teqners" />
             </Head>
             <h1 className="srOnly">Contact us at Teqners</h1>
             <main className={styles.main}>
@@ -20,15 +16,11 @@ const Contact: NextPage = () => {
                     <div className={styles.engagingSection}>
                         <picture className={styles.engagingImage}>
                             <img
-                                src="/contact-bg.png"
+                                src="/static/contact-bg.jpg"
                                 alt="two people shaking hands"
                             />
                         </picture>
-                        <h2 className={styles.engagingText}>
-                            Have a project?
-                            <br />
-                            We’d love to help.
-                        </h2>
+                        <h2 className={styles.engagingText}>Wanna talk?</h2>
                     </div>
                     <div className={styles.contactFormContainer}>
                         <ContactForm />

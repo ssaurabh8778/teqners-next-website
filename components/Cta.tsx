@@ -11,7 +11,7 @@ const Cta: React.FC = () => {
                 </h2>
 
                 <p className={styles.ctaParagraph}>
-                    No payment required, talk to our expert for free.
+                    No payment required, send a message to our team for free.
                 </p>
                 <Link href="/contact">
                     <a className={variables.primaryBtnLargeClass}>

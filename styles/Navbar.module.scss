@@ -1,23 +1,33 @@
+@use "font";
 .navbar {
+    @extend %p2-upper;
+    font-size: 0.9em;
+    font-weight: 500;
+
+    // padding: 1.5em 0 1em;
     width: 100%;
+    height: var(--navbar-height);
+
     background: hsla(204, 100%, 3%, 0.6);
     background: linear-gradient(
         180deg,
-        #00090f 0%,
-        rgba(0, 9, 15, 0.859375) 41.67%,
-        rgba(0, 9, 15, 0) 100%
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
     );
+
     position: absolute;
     top: 0;
-    z-index: 999;
-    padding: 1.75em 0;
+    z-index: 99;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     // transition: padding 500ms ease-in-out;
 }
 .container {
     display: flex;
-    // flex-direction: column;
     align-items: center;
-
+    justify-content: space-between;
     gap: 1.75em;
     width: 90%;
     max-width: 1340px;
@@ -41,11 +51,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 1.5em;
-    font-size: 1em;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
 }
 
 .menuMobile {
@@ -55,21 +60,30 @@
     // transform: translateX(-50%);
     flex-direction: column;
     justify-content: center;
-
+    gap: 1.5em;
     width: 100%;
-    padding-top: var(--navbar-height);
-    background: linear-gradient(
-        180deg,
-        rgba(0, 9, 15, 0.859375) 0%,
-        rgba(0, 9, 15, 0.5) 100%
-    );
-    // backdrop-filter: blur(16px);
+    padding-top: calc(var(--navbar-height) / 1.25);
+    // background: linear-gradient(
+    //     180deg,
+    //     rgba(0, 9, 15, 0.859375) 0%,
+    //     rgba(0, 9, 15, 0.5) 100%
+    // );
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    opacity: 1;
+    transform: translate(-50%, 0%);
+    backdrop-filter: saturate(150%) blur(5px);
+
     padding-bottom: 2.5em;
     z-index: -1;
     transition: transform 500ms ease-out, opacity 100ms linear,
         backdrop-filter 500ms linear;
+    &--close {
+        opacity: 0;
+        transform: translate(-50%, -125%);
+        backdrop-filter: blur(0px);
+    }
 }
 
 .menuDesktop {
-    margin-left: auto;
+    gap: 1.5em;
 }

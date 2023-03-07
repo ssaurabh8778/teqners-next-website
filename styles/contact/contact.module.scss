@@ -16,10 +16,14 @@
 }
 
 .engagingImage {
+    min-height: 25vh;
     & img {
         width: 100%;
         max-height: 40vmax;
+        min-height: inherit;
         object-fit: cover;
+        filter: sepia(100%) saturate(150%) hue-rotate(170deg) contrast(110%)
+            brightness(45%);
     }
 }
 
@@ -84,6 +88,7 @@
 
     .engagingImage {
         height: 100%;
+        min-height: 50vh;
         & img {
             // aspect-ratio: 0.5;
             // max-height: none;
