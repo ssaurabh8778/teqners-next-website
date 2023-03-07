@@ -6,7 +6,11 @@ const Gallery = ({ images }: { images: string[] }) => {
     const [isCarouselOpen, setIsCarouselOpen] = useState<boolean>(false);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const clickHandler = (e: React.MouseEvent<HTMLElement>) => {
-        setCurrentIndex(images.indexOf(e.target?.dataset?.id));
+        setCurrentIndex(
+            e.target instanceof HTMLElement
+                ? images.indexOf(e.target.dataset.id!)
+                : 0
+        );
         setIsCarouselOpen((current) => !current);
     };
 
