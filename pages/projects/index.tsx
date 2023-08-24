@@ -4,32 +4,29 @@ import Gallery from "../../components/Gallery";
 import styles from "/styles/projects/projects.module.scss";
 import Link from "next/link";
 
-const GALLERY_DIR = "/static/projects/solarhub/";
+const GALLERY_DIR = "/static/projects/projectimages/";
 
 const images = Array.from(
-    { length: 13 },
-    (_, i) => GALLERY_DIR + (1 + i) + ".png"
+  { length: 2 },
+  (_, i) => GALLERY_DIR + (1 + i) + ".png"
 );
 
 const Projects: NextPage = () => {
-    return (
-        <>
-            <Head>
-                <title>Project - Teqners</title>
-                <meta
-                    name="description"
-                    content="Projects that Teqners has served"
-                />
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>Project - Teqners</title>
+        <meta name="description" content="Projects that Teqners has served" />
+      </Head>
 
-            <div className={styles.container}>
-                <h1 className={styles.projectTitle}>
-                    <Link href={"https://www.solarhub24.de/"}>SolarHub</Link>
-                </h1>
-                <Gallery images={images} />
-            </div>
-        </>
-    );
+      <div className={styles.container}>
+        <h1 className={styles.projectTitle}>
+          {/*           <Link href={"https://www.solarhub24.de/"}>SolarHub</Link> */}
+        </h1>
+        <Gallery images={images} />
+      </div>
+    </>
+  );
 };
 
 // export async function getServerSideProps() {
